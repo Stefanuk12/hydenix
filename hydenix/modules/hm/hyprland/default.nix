@@ -28,6 +28,7 @@ in
       pkgs.hyprutils
       pkgs.hyprpicker
       pkgs.hyprcursor
+      pkgs.hyprsunset
     ];
 
     home.activation.createHyprConfigs = lib.hm.dag.entryAfter [ "mutableGeneration" ] ''
