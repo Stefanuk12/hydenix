@@ -10,6 +10,12 @@
     };
     nixos-hardware.url = "github:nixos/nixos-hardware/master";
 
+    # Upstream Hyprland flake - tracks latest release ahead of nixpkgs
+    hyprland = {
+      url = "github:hyprwm/Hyprland";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     # Nix-index-database - for comma and command-not-found
     nix-index-database = {
       url = "github:nix-community/nix-index-database";

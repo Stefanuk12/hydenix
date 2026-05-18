@@ -20,6 +20,12 @@ let
     hydectl = inputs.hydectl.packages.${prev.stdenv.hostPlatform.system}.default;
     hyde-ipc = inputs.hyde-ipc.packages.${prev.stdenv.hostPlatform.system}.default;
     hyde-config = inputs.hyde-config.packages.${prev.stdenv.hostPlatform.system}.default;
+
+    # Pull Hyprland and its portal from the upstream flake so we get the
+    # latest release rather than whatever ships in the pinned nixpkgs.
+    hyprland = inputs.hyprland.packages.${prev.stdenv.hostPlatform.system}.hyprland;
+    xdg-desktop-portal-hyprland =
+      inputs.hyprland.packages.${prev.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
   };
 in
 packages
